@@ -6,8 +6,28 @@ use PHPUnit\Framework\TestCase;
 use ygorkauawj\Desafiophpunit\Exceptions\NegativeNumberException;
 use ygorkauawj\Desafiophpunit\Models\Adicao;
 
-class ExponenciacaoTest extends TestCase
+class AdicaoTest extends TestCase
 {
+    /**
+     * @dataProvider valoresPadroes
+     */
+    public function testAdicaoComNumeroPadrao(float $num1, float $num2)
+    {
+        $adc = new Adicao();
+        $result = $adc->Adicao($num1, $num2);
+        self::assertEquals(15, $result);
+    }
+
+    /**
+     * @dataProvider valoresPadroes
+     */
+    public function testAdicaoComNumeroPadraoAoContrario(float $num1, float $num2)
+    {
+        $adc = new Adicao();
+        $result = $adc->Adicao($num2, $num1);
+        self::assertEquals(15, $result);
+    }
+
     public function testPrimeiroNumeroNegativo()
     {
         $this->expectException(NegativeNumberException::class);
@@ -18,7 +38,6 @@ class ExponenciacaoTest extends TestCase
 
         $adc = new Adicao();
         $adc->adicao($num1, $num2);
-
     }
 
     public function testSegundoNumeroNegativo()
@@ -31,6 +50,15 @@ class ExponenciacaoTest extends TestCase
 
         $adc = new Adicao();
         $adc->adicao($num1, $num2);
+    }
 
+    public function valoresPadroes()
+    {
+        $num1 = 10;
+        $num2 = 5;
+
+        return [
+            [$num1, $num2]
+        ];
     }
 }

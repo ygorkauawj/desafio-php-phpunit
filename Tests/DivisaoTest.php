@@ -8,14 +8,26 @@ use ygorkauawj\Desafiophpunit\Models\Divisao;
 
 class DivisaoTest extends TestCase
 {
-    public function testDivisaoComInt()
+    /**
+     * @dataProvider valoresPadroes
+     */
+    public function testDivisaoComNumeroPadrao(float $num1, float $num2)
     {
-        $num1 = -10;
-        $num2 = 2;
-
         $dvs = new Divisao();
-        $dvs->divisao($num1, $num2);
+        $result = $dvs->divisao($num1, $num2);
+        self::assertEquals(2, $result);
     }
+
+    /**
+     * @dataProvider valoresPadroes
+     */
+    public function testDivisaoComNumeroPadraoAoContrario(float $num1, float $num2)
+    {
+        $dvs = new Divisao();
+        $result = $dvs->divisao($num2, $num1);
+        self::assertEquals(0.5, $result);
+    }
+
     public function testPrimeiroNumeroNegativo()
     {
         $this->expectException(NegativeNumberException::class);     
@@ -37,6 +49,15 @@ class DivisaoTest extends TestCase
 
         $dvs = new Divisao();
         $dvs->divisao($num1, $num2);
+    }
 
+    public function valoresPadroes()
+    {
+        $num1 = 10;
+        $num2 = 5;
+
+        return [
+            [$num1, $num2]
+        ];
     }
 }

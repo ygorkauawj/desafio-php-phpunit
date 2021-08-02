@@ -9,13 +9,23 @@ use ygorkauawj\Desafiophpunit\Models\Exponenciacao;
 class ExponenciacaoTest extends TestCase
 {
     /**
-     * @dataProvider valoresPadrao
+     * @dataProvider valoresPadroes
      */
     public function testExponenciacaoComNumeroPadrao(float $num1, float $num2)
     {
         $expo = new Exponenciacao();
         $result = $expo->exponenciacao($num1, $num2);
-        $this->assertEquals(100000, $result);
+        self::assertEquals(100000, $result);
+    }
+
+    /**
+     * @dataProvider valoresPadroes
+     */
+    public function testExponenciacaoComNumeroPadraoAoContrario(float $num1, float $num2)
+    {
+        $expo = new Exponenciacao();
+        $result = $expo->exponenciacao($num2, $num1);
+        self::assertEquals(9765625, $result);
     }
     public function testPrimeiroNumeroNegativo()
     {
@@ -43,14 +53,13 @@ class ExponenciacaoTest extends TestCase
 
     }
 
-    public function valoresPadrao()
+    public function valoresPadroes()
     {
         $num1 = 10;
         $num2 = 5;
 
         return [
-            $num1,
-            $num2
+            [$num1, $num2]
         ];
     }
 }

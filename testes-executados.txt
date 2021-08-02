@@ -1,4 +1,30 @@
+Adicao (ygorkauawj\Tests\Adicao)
+ [x] Adicao com numero padrao with data set #0
+ [x] Adicao com numero padrao ao contrario with data set #0
+ [x] Primeiro numero negativo
+ [x] Segundo numero negativo
+
 Divisao (ygorkauawj\Tests\Divisao)
+ [x] Divisao com numero padrao with data set #0
+ [x] Divisao com numero padrao ao contrario with data set #0
+ [x] Primeiro numero negativo
+ [x] Segundo numero negativo
+
+Exponenciacao (ygorkauawj\Tests\Exponenciacao)
+ [x] Exponenciacao com numero padrao with data set #0
+ [x] Exponenciacao com numero padrao ao contrario with data set #0
+ [x] Primeiro numero negativo
+ [x] Segundo numero negativo
+
+Multiplicacao (ygorkauawj\Tests\Multiplicacao)
+ [x] Multiplicacao com numero padrao with data set #0
+ [x] Multiplicacao com numero padrao ao contrario with data set #0
+ [x] Primeiro numero negativo with data set #0
+ [x] Segundo numero negativo with data set #0
+
+Subtracao (ygorkauawj\Tests\Subtracao)
+ [x] Subtracao com numero padrao with data set #0
+ [x] Subtracao com numero padrao ao contrario with data set #0
  [x] Primeiro numero negativo
  [x] Segundo numero negativo
 

@@ -10,7 +10,7 @@ class Exponenciacao
         if ($num1 <= 0 || $num2 <= 0) {
             throw new NegativeNumberException;
         }
-        $result = $num1 ^ $num2;
+        $result = pow($num1, $num2);
         return $result;
     }
 }
